@@ -2,7 +2,7 @@
 
 #title           :comsumeMsgs.py
 #description     :The class is a simple cosumer to print message
-#author		     :Ajay Krishna Teja Kavuri
+#author		     :Group1
 #date            :01252017
 #version         :0.1
 #==============================================================================

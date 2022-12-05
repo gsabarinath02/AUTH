@@ -14,13 +14,13 @@
       <!-- Link cards -->
       <div class="qckLnksWrppr">
         <!-- header -->
-        <h3>Made with <i style="color:red" class="glyphicon glyphicon-heart"></i> for open source.</h3>
+        <h3>Created by Group-3<i style="color:red" class="glyphicon glyphicon-heart"></i>.</h3>
         <!-- Row -->
         <div class="row">
           <!-- cards -->
           <!-- Presentation -->
           <div class="col-xs-12 col-sm-6 col-md-3">
-            <a href="https://bitly.com/ajay_week3">
+            <a href="https://www.canva.com/design/DAFR0BzWuUE/mIRsYzedss1ClAOl372LbQ/edit?utm_content=DAFR0BzWuUE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">
               <div class="well dashCard btn-circle">
                 <!-- heading -->
                 <div class="dashCardHeading">
@@ -34,7 +34,7 @@
             </a>
           </div>
           <div class="col-xs-12 col-sm-6 col-md-3">
-            <a href="https://github.com/pseudoaj/MyInsightRepo/tree/master">
+            <a href="https://github.com/gsabarinath02">
               <div class="well dashCard btn-circle">
                 <!-- heading -->
                 <div class="dashCardHeading">
@@ -62,7 +62,7 @@
             </a>
           </div>
           <div class="col-xs-12 col-sm-6 col-md-3">
-            <a href="https://www.linkedin.com/in/pseudoaj">
+            <a href="https://www.linkedin.com/in/g-sabarinath02/">
               <div class="well dashCard btn-circle">
                 <!-- heading -->
                 <div class="dashCardHeading">

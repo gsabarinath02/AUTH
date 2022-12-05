@@ -3,6 +3,7 @@
 // Name space for the controller
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Str;
 // Request
 use Illuminate\Http\Request;
 // Redis
@@ -55,7 +56,7 @@ class UserController extends Controller {
     }
 
     // Return the value
-    return $sum;
+    return getData();
   }
 
   // Function to return the index view
@@ -71,7 +72,7 @@ class UserController extends Controller {
     }
 
     // Return the view
-    return view('user')->with("user_id",$this->user_id)
+    return view('user')->with("user_id",\Webpatser\Uuid\Uuid::generate()->string)
                        ->with("electricity",$topics["electricity"])
                        ->with("water",$topics["water"])
                        ->with("gas",$topics["gas"]);

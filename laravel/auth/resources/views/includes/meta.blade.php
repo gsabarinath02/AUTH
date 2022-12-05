@@ -13,7 +13,7 @@
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 <!-- Theme CSS -->
-<link rel="stylesheet" href="{{ mix('/css/app.css') }}"/>
+<link rel="stylesheet" href="{{ asset('/css/app.css') }}"/>
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

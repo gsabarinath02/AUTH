@@ -3,6 +3,7 @@
 // Name space for the controller
 namespace App\Http\Controllers;
 
+use App\State;
 // Request
 use Illuminate\Http\Request;
 // Redis
@@ -29,13 +30,13 @@ class AdminController extends Controller{
     // Define a format for the data
     $chartDataFormat =
     '{
-      "cols":
+      "cols": 
           [
             {"id":"","label":"States","pattern":"","type":"string"},
             {"id":"","label":"Consumption","pattern":"","type":"number"}
           ],
-
-      "rows":
+        
+      "rows": 
           [
             {"c":[{"v":"US-AL","f":null},{"v":%d,"f":null}]},
             {"c":[{"v":"US-AK","f":null},{"v":%d,"f":null}]},
@@ -87,8 +88,9 @@ class AdminController extends Controller{
             {"c":[{"v":"US-WA","f":null},{"v":%d,"f":null}]},
             {"c":[{"v":"US-WV","f":null},{"v":%d,"f":null}]},
             {"c":[{"v":"US-WI","f":null},{"v":%d,"f":null}]},
-            {"c":[{"v":"US-WY","f":null},{"v":%d,"f":null}]},
+            {"c":[{"v":"US-WY","f":null},{"v":%d,"f":null}]}
           ]
+        
     }';
 
     // Array of values
@@ -106,14 +108,19 @@ class AdminController extends Controller{
       // Calculate the sum for the consumption
       $eCnsmptn = $this->calcSumOfArr($eCnsmptnList);
 
+      $item = State::where([ 'name' => $curKey ])->first();
+      if (! $item) $item = State::create([ 'name' => $curKey, 'consumption' => getConsumption() ]);
+      $item->update([ 'consumption' => updateConsumption($item->consumption) ]);
+
       // Put it in the array
       // Add to the array
-      array_push($stateValues,round($eCnsmptn));
-      $this->stateStats[$state] = round($eCnsmptn);
+      array_push($stateValues, $item->consumption);
+      $this->stateStats[$state] = $item->consumption;
     }
 
+    
     // Assign values for each state
-    $this->chartData = vsprintf($chartDataFormat,$stateValues);
+    $this->chartData = vsprintf($chartDataFormat, $stateValues);
   }
 
   // Function to show the index page
@@ -152,4 +159,5 @@ class AdminController extends Controller{
     //return the sum
     return $sum;
   }
+
 }

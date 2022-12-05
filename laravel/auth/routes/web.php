@@ -30,3 +30,4 @@ Route::get('admin', 'AdminController@show');
 
 // Route for sending data
 Route::get('getChartData', 'AdminController@getChartData');
+Route::get('reset', 'StateController@reset');
